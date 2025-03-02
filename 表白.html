@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表白</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url('https://img1.baidu.com/it/u=3200428673,4098053040&fm=253&fmt=auto&app=138&f=JPEG?w=801&h=800'); /* 初始背景图片 */
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            background-color: rgba(0, 0, 0, 0.2); /* 降低图片透明度20% */
+        }
+        #container {
+            text-align: center;
+        }
+        h2 {
+            font-size: 36px; /* 放大文字 */
+            font-weight: bold; /* 加粗文字 */
+            color: black; /* 设置文字颜色为黑色 */
+        }
+        #yesBtn, #noBtn {
+            font-size: 20px; /* 放大按钮文字 */
+            padding: 15px 30px;
+            margin: 15px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        #yesBtn {
+            background-color: #4CAF50; /* 绿色 */
+            color: white;
+        }
+        #noBtn {
+            background-color: #f44336; /* 红色 */
+            color: white;
+        }
+        /* 按钮 hover 效果 */
+        #yesBtn:hover {
+            background-color: #45a049;
+        }
+        #noBtn:hover {
+            background-color: #e53935;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>你能不能接受我的表白？</h2>
+        <button id="yesBtn" onclick="acceptLove()">接受</button>
+        <button id="noBtn" onclick="rejectLove()">不接受</button>
+    </div>
+
+    <script>
+        let yesBtn = document.getElementById("yesBtn");
+        let noBtn = document.getElementById("noBtn");
+        let scale = 1;
+
+        function acceptLove() {
+            // 更换背景图片
+            document.body.style.backgroundImage = "url('https://i2.hdslb.com/bfs/archive/ad349f5949399d9d6aa793cbcdcb1b4482f545b0.jpg')";
+            document.body.innerHTML = "<h1>我们成为情侣啦！</h1>";
+        }
+
+        function rejectLove() {
+            scale += 0.2;
+            yesBtn.style.transform = `scale(${scale})`;
+        }
+    </script>
+</body>
+</html>
